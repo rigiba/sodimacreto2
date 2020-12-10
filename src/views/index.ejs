@@ -1,0 +1,36 @@
+<%- include ('partials/_header') %>
+<nav class="navbar navbar-dark bg-dark mb-4 navbar-hover">
+    <a href="/" class="navbar-brand">
+        Proveedores - Sodimac
+    </a>
+
+    <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Que deseas buscar" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+    </form>
+
+</nav>
+<div class="container">
+    <h1>Listado proveedores</h1>
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action='/add' method="POST">
+                        <div class="form-group">
+                            <input type=text name:"id" class="form-control" placeholder="Ingresa id proveedor"></>
+                            <input type=text name:"nit" class="form-control" placeholder="Ingresa nit proveedor"></>
+                            <input type=text name:"razon" class="form-control" placeholder="Ingresa razon social proveedor"></>
+                        </div>
+                    </form>
+                    <button type="button" class="btn btn-primary" title="Adicionar" >add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<%- include ('partials/_footer') %>
