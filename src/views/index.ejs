@@ -5,32 +5,68 @@
     </a>
 
     <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Que deseas buscar" aria-label="Search">
+        <input class="form-control me-2" type="search" placeholder="buscar" aria-label="Buscar">
         <button class="btn btn-outline-success" type="submit">Buscar</button>
     </form>
 
 </nav>
 <div class="container">
-    <h1>Listado proveedores</h1>
+    <h1>Proveedores</h1>
     <div class="row">
+
+        <pre>
+            <!-- <%- tasks %> -->
+        </pre>
+
+
         <div class="col-md-5">
             <div class="card">
                 <div class="card-body">
                     <form action='/add' method="POST">
-                        <div class="form-group">
-                            <input type=text name:"id" class="form-control" placeholder="Ingresa id proveedor"></>
-                            <input type=text name:"nit" class="form-control" placeholder="Ingresa nit proveedor"></>
-                            <input type=text name:"razon" class="form-control" placeholder="Ingresa razon social proveedor"></>
+                        <div class="form-group mb-2">
+                            <input type="text" name="title" class="form-control" placeholder="Ingresa id proveedor"></>
                         </div>
+                        <div class="form-group mb-2">
+                            <textarea type="text" cols="80" name="description" class="form-control" placeholder="Ingresa nit proveedor"></textarea>
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="text" cols="80" name="status" class="form-control" placeholder="Ingresa estado"></>
+                        </div>
+                        <button type="submit" class="btn btn-outline-primary">Agregar</button>
+                        <button type="reset" class="btn btn-outline-primary">Limpiar</button>
                     </form>
-                    <button type="button" class="btn btn-primary" title="Adicionar" >add</button>
                 </div>
             </div>
         </div>
+        <!-- listado -->
+        <div class="col-md-7">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Nro.</th>
+                        <th>Titulo</th>
+                        <th>Descripcion</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i = 0; i < tasks.length; i++) { %>
+                        <tr>
+                            <td><%= i +1 %></td>
+                            <td><%= tasks[i].title%></td>
+                            <td><%= tasks[i].description%></td>
+                            <td>
+                                <a href="" class="btn btn-dark">Hecho</a>
+                                <a href="" class="btn btn-danger">-</a>
+                                <a href="" class="btn btn-info">+</a>
+                                <a href="" class="btn btn-warning">update</a>
+                            </td>
+                        </tr>
+                        <% }; %>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
-
-
-
 
 <%- include ('partials/_footer') %>

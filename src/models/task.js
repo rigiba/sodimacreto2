@@ -13,5 +13,5 @@ const TaskSchema = new Schema({
     }
 })
 
-model.exports = mongoose.model('tasks', TaskSchema) //nmbre collecion para escribir sobre la BD y  esquema con el modelo de datos
+module.exports = mongoose.model('listado', TaskSchema) //nmbre collecion para escribir sobre la BD y  esquema con el modelo de datos
 

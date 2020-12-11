@@ -25,18 +25,13 @@ app.set('view engine','ejs') //llamando el motor de plantillas que ya esta en ex
 //inicio serves
 
 
-
 //midelware de express, aquello que voy a procesar antes de pasarlo al server (interpretar los verbos HTTP)
 app.use(morgan('dev'))
-app.use(express.urlencoded({extended:false}))
-
-
+app.use(express.urlencoded({extended:true}))
 
 
 //rutas
 app.use('/', indexRoutes)
-
-
 
 // app.get('/', (req, res) => {
 //     res.sendFile(path.join(__dirname, 'home.html'))
