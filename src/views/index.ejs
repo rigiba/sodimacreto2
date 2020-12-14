@@ -2,7 +2,7 @@
 
 
 <div class="container">
-    <h1>Proveedores</h1>
+    <h1>Inscripción Proveedores</h1>
     <div class="row">
 
         <pre>
@@ -15,7 +15,7 @@
                 <div class="card-body">
                     <form action='/add' method="POST">
                         <div class="form-group mb-2">
-                            <input type="text" name="title" class="form-control" placeholder="Ingresa id proveedor"></>
+                            <input type="text" name="title" class="form-control" placeholder="Ingresa NIT"></>
                         </div>
                         <div class="form-group mb-2">
                             <textarea type="text" cols="80" name="description" class="form-control" placeholder="Ingresa nit proveedor"></textarea>
@@ -35,9 +35,10 @@
                 <thead>
                     <tr>
                         <th>Nro.</th>
-                        <th>Titulo</th>
-                        <th>Descripcion</th>
+                        <th>Nit</th>
+                        <th>Razon Social</th>
                         <th>Opciones</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -47,10 +48,10 @@
                             <td><%= tasks[i].title%></td>
                             <td><%= tasks[i].description%></td>
                             <td>
-                                <a href="/done/<%= tasks[i]._id%>" class="btn <%= tasks[i].status ? 'btn-success' : 'btn-dark' %>">Hecho</a>
+                                <!-- <a href="/done/<%= tasks[i]._id%>" class="btn <%= tasks[i].status ? 'btn-success' : 'btn-dark' %>">Hecho</a> -->
                                 <a href="/delete/<%= tasks[i]._id%>" class="btn btn-danger">-</a>
-                                <a href="" class="btn btn-primary">+</a>
-                                <a href="/edit/<%= tasks[i]._id%>" class="btn btn-warning">editar</a>
+                                <!-- <a href="/edit/<%= tasks[i]._id%>" class="btn btn-warning">editar</a> -->
+                                <a href="/edit/<%= tasks[i]._id%>" class="btn btn-primary">+</a>
                             </td>
                         </tr>
                         <% }; %>
