@@ -1,15 +1,6 @@
 <%- include ('partials/_header') %>
-<nav class="navbar navbar-dark bg-dark mb-4 navbar-hover">
-    <a href="/" class="navbar-brand">
-        Proveedores - Sodimac
-    </a>
 
-    <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="buscar" aria-label="Buscar">
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
-    </form>
 
-</nav>
 <div class="container">
     <h1>Proveedores</h1>
     <div class="row">
@@ -29,10 +20,10 @@
                         <div class="form-group mb-2">
                             <textarea type="text" cols="80" name="description" class="form-control" placeholder="Ingresa nit proveedor"></textarea>
                         </div>
-                        <div class="form-group mb-2">
+                        <!-- <div class="form-group mb-2">
                             <input type="text" cols="80" name="status" class="form-control" placeholder="Ingresa estado"></>
-                        </div>
-                        <button type="submit" class="btn btn-outline-primary">Agregar</button>
+                        </div> -->
+                        <button type="submit" class="btn btn-outline-primary btn-block">Agregar</button>
                         <button type="reset" class="btn btn-outline-primary">Limpiar</button>
                     </form>
                 </div>
@@ -56,10 +47,10 @@
                             <td><%= tasks[i].title%></td>
                             <td><%= tasks[i].description%></td>
                             <td>
-                                <a href="" class="btn btn-dark">Hecho</a>
-                                <a href="" class="btn btn-danger">-</a>
-                                <a href="" class="btn btn-info">+</a>
-                                <a href="" class="btn btn-warning">update</a>
+                                <a href="/done/<%= tasks[i]._id%>" class="btn <%= tasks[i].status ? 'btn-success' : 'btn-dark' %>">Hecho</a>
+                                <a href="/delete/<%= tasks[i]._id%>" class="btn btn-danger">-</a>
+                                <a href="" class="btn btn-primary">+</a>
+                                <a href="/edit/<%= tasks[i]._id%>" class="btn btn-warning">editar</a>
                             </td>
                         </tr>
                         <% }; %>
