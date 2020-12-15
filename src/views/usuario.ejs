@@ -1,16 +1,9 @@
 <%- include ('partials/_header') %>
 
-
 <div class="container">
     <img class="rounded mx-auto d-block" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fs3.amazonaws.com%2Fpagoefectivo.pe%2Fzona.pagoefectivo.pe%2Fzona.pagoefectivo.pe%2Fuploads%2F2016%2F07%2F01211127%2Fsodimac-logo.jpg&f=1&nofb=1"></img>
-    <h1>Inscripción Proveedores</h1>
+    <h1>Inscripción usuarios</h1>
     <div class="row">
-
-        <pre>
-            <!-- <%- tasks %> -->
-        </pre>
-
-
         <div class="col-md-5">
             <div class="card">
                 <div class="card-body">
@@ -43,19 +36,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% for(var i = 0; i < tasks.length; i++) { %>
-                        <tr>
-                            <td><%= i +1 %></td>
-                            <td><%= tasks[i].title%></td>
-                            <td><%= tasks[i].description%></td>
-                            <td>
-                                <!-- <a href="/done/<%= tasks[i]._id%>" class="btn <%= tasks[i].status ? 'btn-success' : 'btn-dark' %>">Hecho</a> -->
-                                <a href="/delete/<%= tasks[i]._id%>" class="btn btn-danger">-</a>
-                                <!-- <a href="/edit/<%= tasks[i]._id%>" class="btn btn-warning">editar</a> -->
-                                <a href="/edit/<%= tasks[i]._id%>" class="btn btn-primary">+</a>
-                            </td>
-                        </tr>
-                        <% }; %>
+
                 </tbody>
             </table>
         </div>

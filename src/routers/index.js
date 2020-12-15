@@ -3,6 +3,11 @@ const router = express.Router()
 const Task = require('../models/task')
 
 
+router.get('/usuario', (req, res) => {
+    res.render('usuario')
+})
+
+
 router.get('/', async(req, res) => {
     // res.send("aca esta el acerca de")
     const tasks = await Task.find()
